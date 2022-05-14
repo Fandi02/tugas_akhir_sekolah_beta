@@ -17,11 +17,30 @@
             <th scope="col">#</th>
             <th colspan="2" scope="col">
               <center>
-                <img
-                  :src="detailHandphones.phone_images[0]"
-                  alt=""
-                  style="width: 300px; height: 300px"
-                />
+                <div class="d-flex justify-content-center">
+                  <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div
+                      v-for="(image, index) in detailHandphones.phone_images"
+                      :key="index"
+                      :image="image"
+                    >
+                      <div class="col">
+                        <div class="card h-100">
+                          <img
+                            :src="detailHandphones.phone_images[index]"
+                            alt=""
+                            style="
+                              width: 200px;
+                              height: 200px;
+                              margin-bottom: 20px;
+                            "
+                            class="card-img-top"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </center>
             </th>
           </tr>
